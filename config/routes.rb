@@ -1,30 +1,32 @@
 Rails.application.routes.draw do
 
-  get 'holidaybird/ret'
+  get 'turkeytote/ret'
 
-  get 'holidaybird/consumer'
+  get 'turkeytote/retnj'
 
-  get 'holidaybird/fsv'
+  get 'turkeytote/retil'
 
-  get 'holidaybird/fsvnj'
+  get 'turkeytote/consumer'
 
-  get 'holidaybird/fsvil'
+  get 'turkeytote/fs'
 
-  get 'holidaybird/fsvtx'
+  get 'turkeytote/fsnj'
 
-  get 'holidaybird/fsvga'
+  get 'turkeytote/fsil'
 
-  get 'holidaybird/fsr'
+  get 'turkeytote/fstx'
 
-  get 'holidaybird/fsrnj'
+  get 'turkeytote/fsga'
 
-  get 'holidaybird/fsril'
+  get 'turkeytote/totals'
 
-  get 'holidaybird/fsrtx'
+  get 'turkeytote/totalsnj'
 
-  get 'holidaybird/fsrga'
+  get 'turkeytote/totalsil'
 
-  get 'holidaybird/totals'
+  get 'turkeytote/totalsga'
+
+  get 'turkeytote/totalstx'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -28,7 +28,7 @@ test:
 production:
   <<: *default
   adapter: sqlserver
-  database: e21test2
+  database: e21prod
   host: sqlserver01
   username: intranet
   password: Duck600it

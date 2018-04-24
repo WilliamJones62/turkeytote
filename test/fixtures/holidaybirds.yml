@@ -8,9 +8,10 @@ one:
   ordered: 1
   forecast: 1
   harvest: 1
-  datetime: 2017-10-20 08:44:06
+  datetime: 2017-11-02 14:02:32
   cc: MyString
   adjustment: 1
+  uom: MyString
 
 two:
   channel: MyString
@@ -20,6 +21,7 @@ two:
   ordered: 1
   forecast: 1
   harvest: 1
-  datetime: 2017-10-20 08:44:06
+  datetime: 2017-11-02 14:02:32
   cc: MyString
   adjustment: 1
+  uom: MyString

@@ -1,0 +1,59 @@
+
+<table id="mytable" class="display" cellspacing="0" >
+  <thead>
+  <tr>
+    <th>SKU</th>
+    <th>Item</th>
+    <th>Unit Of Measure</th>
+    <th>Shipped</th>
+    <th>Ordered</th>
+    <th>Forecast/Harvest</th>
+    <th>Adjustment</th>
+    <th>To Sell</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @main.each do |main| %>
+    <% sold = (main.shipped + main.ordered - main.adjustment) * 100 %>
+
+    <% if !main.harvest || @forecast_value %>
+      <% if main.forecast == 0 %>
+        <% percent = 100 %>
+      <% else %>
+        <% percent = sold/main.forecast %>
+      <% end %>
+    <% else %>
+      <% if main.harvest == 0 %>
+        <% percent = 100 %>
+      <% else %>
+        <% percent = sold/main.harvest %>
+      <% end %>
+    <% end %>
+    <% if percent < 50 %>
+      <tr id="green">
+    <% else %>
+      <% if percent < 75 %>
+        <tr id="yellow">
+      <% else %>
+        <tr id="red">
+      <% end %>
+    <% end %>
+      <td><%= main.sku %></td>
+      <td><%= main.description %></td>
+      <td><%= main.uom %></td>
+      <td><%= main.shipped %></td>
+      <td><%= main.ordered %></td>
+      <% if !main.harvest  || @forecast_value %>
+        <td id="orange"><%= main.forecast %></td>
+        <td><%= main.adjustment %></td>
+        <td><%= main.forecast - (main.shipped + main.ordered) + main.adjustment %></td>
+      <% else %>
+        <td id="blue"><%= main.harvest %></td>
+        <td><%= main.adjustment %></td>
+        <td><%= main.harvest - (main.shipped + main.ordered) + main.adjustment %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  </tbody>
+</table>

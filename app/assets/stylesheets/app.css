@@ -5,10 +5,33 @@ table, th, td {
 
 th, td {
   padding: 15px;
+  text-align: left;
 }
 
 th{
   text-align: left;
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even){
+  background-color: #f2f2f2;
+}
+
+.primary-logo {
+  margin: 0;
+  width: 6.6em;
+  height: 3.7em;
+  float: left;
+  position: relative;
+  background: url("/assets/DArtagnan_Logo_2015_CMYK_mini.jpg");
+}
+
+.title {
+  text-align: center;
+  float: left;
+  margin-right: 4em;
+  margin-left: 4em;
 }
 
 tr#green {
@@ -31,39 +54,40 @@ td#orange {
   background-color: orange;
 }
 
-#navbar span {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(153,255,255);
-  float: left;
-  border-right:1px solid #bbb;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
-#navbar span:hover {
-    background-color: rgb(255,255,102);
-    color: black;
+a:hover, a:active {
+    background-color: black;
+    color: white;
+    box-shadow: 5px 10px 8px #888888;
 }
+
+#navbar span {
+  float: left;
+  margin-right: 4px;
+}
+
 
 .dropbtn {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: rgb(153,255,255);
-  float: left;
-  border-right:1px solid #bbb;
-  display: block;
+  background-color: white;
   color: black;
+  border: 2px solid black;
+  border-radius: 4px;
   text-align: center;
-  padding: 14px 16px;
+  padding: 10px 20px;
   text-decoration: none;
+  display: inline-block;
+  float: left;
+  display: inline-block;
 }
 
 .dropdown {
@@ -74,49 +98,18 @@ td#orange {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(153,255,255);
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    min-width: 60px;
     z-index: 1;
 }
 
 .dropdown-content span {
     color: black;
-    padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
-.dropdown-content span:hover {background-color: rgb(255,255,102)}
+/* .dropdown-content span:hover {background-color: rgb(255,255,102)} */
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-.dropdown:hover .dropbtn {
-    background-color: rgb(255,255,102);
-}
-
-.active {
-    background-color: #4CAF50;
-}
-
-.paging-nav {
-  text-align: left;
-  padding-top: 2px;
-}
-
-.paging-nav a {
-  margin: auto 1px;
-  text-decoration: none;
-  display: inline-block;
-  padding: 1px 7px;
-  background: #91b9e6;
-  color: white;
-  border-radius: 3px;
-}
-
-.paging-nav .selected-page {
-  background: #187ed5;
-  font-weight: bold;
 }
