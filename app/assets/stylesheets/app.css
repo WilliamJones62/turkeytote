@@ -15,7 +15,7 @@ th{
 }
 
 tr:nth-child(even){
-  background-color: #f2f2f2;
+  background-color: #d9d9d9;
 }
 
 .primary-logo {
@@ -30,28 +30,12 @@ tr:nth-child(even){
 .title {
   text-align: center;
   float: left;
-  margin-right: 4em;
   margin-left: 4em;
-}
-
-tr#green {
-  background-color: rgb(102,255,102);
-}
-
-tr#yellow {
-  background-color: rgb(255,255,102);
+  margin-right: 8em;
 }
 
 tr#red {
   background-color: rgb(255,153,153);
-}
-
-td#blue {
-  background-color: rgb(51,153,255);
-}
-
-td#orange {
-  background-color: orange;
 }
 
 a:link, a:visited {
