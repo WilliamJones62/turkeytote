@@ -8,6 +8,14 @@ Rails.application.routes.draw do
 
   get 'turkeytote/consumer'
 
+  get 'turkeytote/consumernj'
+
+  get 'turkeytote/consumeril'
+
+  get 'turkeytote/consumerga'
+
+  get 'turkeytote/consumertx'
+
   get 'turkeytote/fs'
 
   get 'turkeytote/fsnj'

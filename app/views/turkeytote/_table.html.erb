@@ -7,6 +7,7 @@
     <th>UOM</th>
     <th>Forecast</th>
     <th>Harvest</th>
+    <th>Adj/Hrv</th>
     <th>Shipped</th>
     <th>Ordered</th>
     <th>Adjustment</th>
@@ -20,14 +21,14 @@
 
     <% if !main.harvest || @forecast_value %>
       <% to_sell = main.forecast - sold %>
-      <% if to_sell <= 0 %></td>
+      <% if to_sell <= 0 %>
         <tr id="red">
       <% else %>
         <tr>
       <% end %>
     <% else %>
       <% to_sell = main.harvest - sold %>
-      <% if to_sell <= 0 %></td>
+      <% if to_sell <= 0 %>
         <tr id="red">
       <% else %>
         <tr>
@@ -39,8 +40,10 @@
       <td><%= main.forecast %></td>
     <% if !main.harvest  || @forecast_value %>
         <td><%= 0 %></td>
+        <td><%= main.adjustment %></td>
     <% else %>
         <td><%= main.harvest %></td>
+        <td><%= main.harvest + main.adjustment %></td>
     <% end %>
       <td><%= main.shipped %></td>
       <td><%= main.ordered %></td>

@@ -15,6 +15,22 @@ class TurkeytoteController < ApplicationController
     set_variables 'CON'
   end
 
+  def consumernj
+    set_variables 'CON', 'NJ'
+  end
+
+  def consumeril
+    set_variables 'CON', 'IL'
+  end
+
+  def consumerga
+    set_variables 'CON', 'GA'
+  end
+
+  def consumertx
+    set_variables 'CON', 'TX'
+  end
+
   def fs
     set_variables 'FS'
   end
@@ -63,26 +79,10 @@ class TurkeytoteController < ApplicationController
   def set_variables (channel, cost_center = ' ')
     @forecast_value = false
     if cost_center == ' '
-      if channel == 'CON'
-        @main = Holidaybird.where(channel: channel).all
-        @main = @main.sort_by &:sku
-        @date = get_db_timestamp
-      else
-#        if channel == 'FS'
-#          t = Holidaybird.arel_table
-#          @everything = Holidaybird.where(t[:channel].eq("FSV").or(t[:channel].eq("FSR"))).all
-#        else
-          @everything = Holidaybird.where(channel: channel).all
-#        end
-        get_totals channel, '  '
-      end
+      @everything = Holidaybird.where(channel: channel).all
+      get_totals channel, '  '
     else
-#      if channel == 'FS'
-#        t = Holidaybird.arel_table
-#        @main = Holidaybird.where((t[:channel].eq("FSV").or(t[:channel].eq("FSR"))).and(t[:cc].eq(cost_center))).all
-#      else
-        @main = Holidaybird.where(channel: channel, cc: cost_center).all
-#      end
+      @main = Holidaybird.where(channel: channel, cc: cost_center).all
       @main = @main.sort_by &:sku
       @date = get_db_timestamp
     end
@@ -137,6 +137,8 @@ class TurkeytoteController < ApplicationController
 
   def get_db_timestamp
     first = Holidaybird.first
-    date = first.datetime
+    if first
+      date = first.datetime
+    end
   end
 end
