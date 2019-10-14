@@ -16,6 +16,8 @@ Rails.application.routes.draw do
 
   get 'turkeytote/consumertx'
 
+  get 'turkeytote/consumerco'
+
   get 'turkeytote/fs'
 
   get 'turkeytote/fsnj'
@@ -26,6 +28,8 @@ Rails.application.routes.draw do
 
   get 'turkeytote/fsga'
 
+  get 'turkeytote/fsco'
+
   get 'turkeytote/totals'
 
   get 'turkeytote/totalsnj'
@@ -35,6 +39,8 @@ Rails.application.routes.draw do
   get 'turkeytote/totalsga'
 
   get 'turkeytote/totalstx'
+
+  get 'turkeytote/totalsco'
 
   root 'turkeytote#totals'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

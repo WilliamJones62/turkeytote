@@ -6,15 +6,15 @@
 #
 default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+  timeout: 15000
 
 development:
   <<: *default
-#  adapter: sqlite3
-#  database: db/development.sqlite3
-  adapter: sqlserver
-  database: e21test2
-  host: sqlserver01
+  adapter: sqlite3
+  database: db/development.sqlite3
+#   adapter: sqlserver
+#   database: e21test2
+#   host: sqlserver01
 
 
 # Warning: The database defined as "test" will be erased and
@@ -29,6 +29,7 @@ production:
   <<: *default
   adapter: sqlserver
   database: e21prod
-  host: sqlserver01
+  dataserver: 10.0.0.215
+  # host: 10.0.0.215\reporting
   username: intranet
   password: Duck600it

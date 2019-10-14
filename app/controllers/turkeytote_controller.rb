@@ -31,6 +31,10 @@ class TurkeytoteController < ApplicationController
     set_variables 'CON', 'TX'
   end
 
+  def consumerco
+    set_variables 'CON', 'CO'
+  end
+
   def fs
     set_variables 'FS'
   end
@@ -51,6 +55,10 @@ class TurkeytoteController < ApplicationController
     set_variables 'FS', 'GA'
   end
 
+  def fsco
+    set_variables 'FS', 'CO'
+  end
+
   def totalsnj
     @everything = Holidaybird.where(cc: 'NJ').all
     get_totals '   ', 'NJ'
@@ -69,6 +77,11 @@ class TurkeytoteController < ApplicationController
   def totalstx
     @everything = Holidaybird.where(cc: 'TX').all
     get_totals '   ', 'TX'
+  end
+
+  def totalsco
+    @everything = Holidaybird.where(cc: 'CO').all
+    get_totals '   ', 'CO'
   end
 
   def totals
@@ -95,6 +108,9 @@ class TurkeytoteController < ApplicationController
     @everything.each do |s|
       if !sku_array.include?(s.sku)
         sku_array.push(s.sku)
+        channel_move = 0
+        ict_move = 0
+        e21_move = 0
         shipped = 0
         ordered = 0
         forecast = 0
@@ -122,12 +138,18 @@ class TurkeytoteController < ApplicationController
             @forecast_value = true
           end
           adjustment += t.adjustment
+          channel_move += t.channel_move
+          ict_move += t.ict_move
+          e21_move += t.e21_move
         end
         first_instance_of_sku.shipped = shipped
         first_instance_of_sku.ordered = ordered
         first_instance_of_sku.forecast = forecast
         first_instance_of_sku.harvest = harvest
         first_instance_of_sku.adjustment = adjustment
+        first_instance_of_sku.channel_move = channel_move
+        first_instance_of_sku.ict_move = ict_move
+        first_instance_of_sku.e21_move = e21_move
         @main.push(first_instance_of_sku)
       end
     end

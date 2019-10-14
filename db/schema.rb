@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102180232) do
+ActiveRecord::Schema.define(version: 20191009160327) do
 
   create_table "holidaybirds", force: :cascade do |t|
     t.string "channel"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20171102180232) do
     t.string "uom"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "channel_move"
+    t.integer "ict_move"
+    t.integer "e21_move"
   end
 
 end

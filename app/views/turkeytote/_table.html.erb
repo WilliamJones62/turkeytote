@@ -7,11 +7,12 @@
     <th>UOM</th>
     <th>Forecast</th>
     <th>Harvest</th>
-    <th>Adj/Hrv</th>
     <th>Shipped</th>
     <th>Ordered</th>
-    <th>Adjustment</th>
-    <th>Left</th>
+    <th>Channel Move</th>
+    <th>ICT Move</th>
+    <th>E21 Adj</th>
+    <th>To Sell</th>
   </tr>
   </thead>
 
@@ -40,14 +41,14 @@
       <td><%= main.forecast %></td>
     <% if !main.harvest  || @forecast_value %>
         <td><%= 0 %></td>
-        <td><%= main.adjustment %></td>
     <% else %>
         <td><%= main.harvest %></td>
-        <td><%= main.harvest + main.adjustment %></td>
     <% end %>
       <td><%= main.shipped %></td>
       <td><%= main.ordered %></td>
-      <td><%= main.adjustment %></td>
+      <td><%= main.channel_move %></td>
+      <td><%= main.ict_move %></td>
+      <td><%= main.e21_move %></td>
       <td><%= to_sell %></td>
     </tr>
   <% end %>
